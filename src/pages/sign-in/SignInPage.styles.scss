@@ -1,0 +1,105 @@
+@import "../../styles/variables";
+
+.sign_In__wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero__section {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign_in__form__wrapper {
+  box-shadow: $shadow;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: end;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.welcome__text {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  letter-spacing: -0.04em;
+  color: $darkblue-variant1;
+}
+
+.sub__text {
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-size: 20px;
+  line-height: 55px;
+  letter-spacing: -0.04em;
+  color: $darkblue-variant1;
+  margin-bottom: 4rem;
+}
+
+.form__input__wrapper {
+  font-family: "Avenir Next";
+  border: 1px solid $darkblue-variant3;
+  color: $darkblue-variant2;
+  width: 400px;
+  border-radius: 0.5rem;
+  display: flex;
+}
+
+.password__input {
+  font-family: "Avenir Next";
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 3rem;
+  margin-left: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.show__password__btn {
+  border: none;
+  color: $aqua-accent;
+  background-color: transparent;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.show__password__btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+
+.link {
+  color: $aqua-accent;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 0.8rem 0;
+}
+
+.sign_in__btn {
+  background-color: $aqua-accent;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 0;
+}
