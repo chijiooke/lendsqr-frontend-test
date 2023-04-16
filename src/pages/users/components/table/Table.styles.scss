@@ -46,3 +46,33 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 0.4rem;
 }
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.page__item {
+  color: $darkblue-variant2;
+  opacity: 0.4;
+}
+.page__item:hover {
+  cursor: pointer;
+}
+.active__page {
+  font-weight: bolder;
+  color: $darkblue-variant2;
+  opacity: 1;
+}
+
+.next__page__link,
+.prev__page__link {
+  background-color: $darkblue-variant3;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+}
+.next__page__link:hover,
+.prev__page__link:hover {
+  cursor: pointer;
+}

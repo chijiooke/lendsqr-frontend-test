@@ -2,6 +2,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 import * as React from "react";
 import "./Table.styles.scss";
+import ReactPaginate from "react-paginate";
 
 import {
   createColumnHelper,
@@ -111,6 +112,27 @@ export const Table = () => {
           </select>{" "}
           out of {users.length}
         </div>
+        <ReactPaginate
+          containerClassName="pagination"
+          activeClassName="active__page"
+          pageClassName="page__item"
+          pageLinkClassName="page__link"
+          previousClassName="page-item"
+          previousLinkClassName="prev__page__link"
+          nextClassName="next__page"
+          nextLinkClassName="next__page__link"
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          breakLabel="..."
+          nextLabel=">"
+          onPageChange={(selected) => {
+            table.setPageIndex(selected.selected);
+          }}
+          pageRangeDisplayed={3}
+          pageCount={users.length / table.getState().pagination.pageSize}
+          previousLabel="<"
+          renderOnZeroPageCount={null}
+        />
       </div>
     </div>
   );
