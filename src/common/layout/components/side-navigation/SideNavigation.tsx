@@ -1,16 +1,23 @@
-import React from "react";
-import { getIcons } from "../../../utils/getIcon";
+import { Link } from "react-router-dom";
+import { navigation } from "./navigationData";
 import "./SideNavigation.styles.scss";
-import { ReactComponent as Briefcase } from "../../../../assets/services.svg";
 
 export const SideNavigation = () => {
   return (
     <div className="navigation__wrapper">
-      <>
-        <Briefcase />
-        
-        <{...getIcons("savings")}/>
-      </>
+      {navigation.map((it) => (
+        <div>
+          <p className="side__nav__group">{it.group}</p>
+          <nav className="side__nav__links">
+            {it.links.map((link) => (
+              <Link to={link.url} className="side__nav__link active">
+                <link.icon />
+                {link.text}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      ))}
     </div>
   );
 };
