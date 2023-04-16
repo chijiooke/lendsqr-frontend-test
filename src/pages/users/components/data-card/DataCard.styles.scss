@@ -1,0 +1,22 @@
+@import "../../../../styles/variables";
+
+.card__wrapper {
+  box-shadow: $shadow;
+  padding: 2rem;
+  background-color: $white;
+  color: $darkblue-variant2;
+  border-radius: 4px;
+}
+
+.card__title {
+  font-size: 14px;
+  text-transform:uppercase;
+  margin-bottom: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.card__count {
+  font-size: 23px;
+  font-weight: 800;
+  color: $darkblue-variant1;
+}

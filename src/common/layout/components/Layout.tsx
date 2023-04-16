@@ -5,7 +5,7 @@ import { SideNavigation } from "./side-navigation/SideNavigation";
 
 export const Layout = () => {
   return (
-    <div style={{ margin: 0 , }}>
+    <div style={{ margin: 0 ,boxSizing:'border-box' }}>
       <Header />
       <SideNavigation />
       <Outlet />

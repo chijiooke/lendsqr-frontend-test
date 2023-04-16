@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.page__wrapper {
+  margin-left: 350px;
+  margin-right: 100px;
+  margin-top: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+.pathname {
+  font-size: 22px;
+  font-weight: 600;
+  color: $darkblue-variant1;
+  margin-bottom: 2rem;
+}
