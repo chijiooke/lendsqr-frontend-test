@@ -1,5 +1,23 @@
+@import "./variables";
+
 @mixin vertical-list {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+}
+@mixin horizontal-list {
+  display: flex;
+  flex-direction: row;
+}
+@mixin card {
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+}
+
+@mixin strong-text($size) {
+  font-size: $size;
+  color: $darkblue-variant2;
+  font-weight: 600;
+}
+

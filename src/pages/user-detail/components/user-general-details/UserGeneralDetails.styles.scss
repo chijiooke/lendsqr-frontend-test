@@ -1,0 +1,15 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/maxins";
+
+.user__general__details__wrapper {
+  @include card;
+  padding: 2rem;
+}
+
+.user__general__details__section{
+    border-bottom: 1px solid $darkblue-variant3;
+}
+
+.section__title{
+    @include strong-text(18px)
+}

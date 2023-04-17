@@ -2,7 +2,8 @@ import { ReactComponent as ActiveUsers } from "../../assets/dashcard-active-user
 import { ReactComponent as UsersWIthLoans } from "../../assets/dashcard-users-with-loans.svg";
 import { ReactComponent as UsersWithSavings } from "../../assets/dashcard-users-with-savings.svg";
 import { ReactComponent as Users } from "../../assets/dashcard-users.svg";
-import PageWrapper from "../../common/UIElements/PageWrapper";
+import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
+
 import DataCard from "./components/data-card/DataCard";
 import { Table } from "./components/table/Table";
 import "./styles/UserPage.styles.scss";
@@ -16,7 +17,7 @@ const UsersPage = () => {
   ];
 
   return (
-    <PageWrapper>
+    <PageWrapper showPath>
       <>
         <div className="data__card__wrapper">
           {userData.map((data) => (

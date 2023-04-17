@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.back__btn {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0;
+  align-items: center;
+  color: $darkblue-variant2;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}

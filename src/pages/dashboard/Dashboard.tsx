@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-    </div>
-  )
-}
+    <PageWrapper showPath>
+      <div></div>
+    </PageWrapper>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

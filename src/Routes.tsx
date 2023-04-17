@@ -6,6 +6,7 @@ import SignInPage from "./pages/sign-in/SignInPage";
 import { BrowserRouter } from "react-router-dom";
 import NotFound from "./pages/404/NotFound";
 import UsersPage from "./pages/users/UsersPage";
+import UserDetailPage from "./pages/user-detail/UserDetailPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/users" element={<UsersPage />} />
+            <Route path="/users/:id" element={<UserDetailPage />} />
           </Route>
         </Route>
       </Routes>

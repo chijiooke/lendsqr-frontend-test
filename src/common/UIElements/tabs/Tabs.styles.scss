@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+@import "../../../styles/maxins";
+
+.tab__wrapper {
+  @include horizontal-list;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: $darkblue-variant2;
+  border: 0;
+  background-color: transparent;
+}
+
+.active__tab{
+  color: $aqua-accent;
+  border-bottom: 1.5px solid $aqua-accent;
+
+}
