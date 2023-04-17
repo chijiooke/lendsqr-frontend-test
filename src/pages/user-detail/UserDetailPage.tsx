@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import avatar from "../../assets/avatar.svg";
 import BackButton from "../../common/UIElements/back-button/BackButton";
 import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
@@ -9,7 +9,7 @@ import { formatAmount } from "../../common/utils/formatAmount";
 
 import { UserType } from "../users/components/table/UserDetailTypes";
 import UserGeneralDetails from "./components/user-general-details/UserGeneralDetails";
-import { tabs } from "./tabs.enums";
+import { tabs } from "./types/tabs.enums";
 import "./UserDetailPage.styles.scss";
 
 const UserDetailPage = () => {
@@ -69,7 +69,9 @@ const UserDetailPage = () => {
                 <p className="user__account__balance">
                   ₦{formatAmount(Number(userDetails?.accountBalance))}
                 </p>
-                <p className="account__number">{userDetails?.accountNumber}/Providus Bank</p>
+                <p className="account__number">
+                  {userDetails?.accountNumber}/Providus Bank
+                </p>
               </div>
             </div>
           </div>
@@ -79,7 +81,9 @@ const UserDetailPage = () => {
             setActiveItem={setActiveTab}
           />
         </div>
-        <UserGeneralDetails/>
+        {activeTab === tabs.GENRAL_DETAILS && (
+          <UserGeneralDetails userDetails={userDetails} />
+        )}
       </div>
     </PageWrapper>
   );
