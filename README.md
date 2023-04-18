@@ -1,6 +1,6 @@
 # lendsqr-frontend-assesment
 
-An admin dashboard
+A loan manangement admin dashboard 
 
 Demo site: https://silva-chijioke-michael-lendsqr-fe-test.vercel.app
 
