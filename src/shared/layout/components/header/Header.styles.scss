@@ -30,8 +30,7 @@
   align-items: center;
 }
 
-
-.hamburger__menu{
+.hamburger__menu {
   border: 0;
   background-color: transparent;
   color: $darkblue-variant1;
@@ -41,15 +40,24 @@
   gap: 2rem;
   max-height: 100px;
   justify-content: space-between;
-  width: 80%;
+  
+  @include md {
+    width: auto;
+  }
+  @include lg {
+    width: 80%;
+  }
   box-sizing: border-box;
 }
 .search__input__wrapper {
   gap: 0;
-  @include xs {
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: row;
+  @include md {
     display: none;
   }
-  @include md {
+  @include lg {
     display: flex;
   }
 }
@@ -63,11 +71,9 @@
 
   @include md {
     width: 200px;
-    display: block;
   }
   @include lg {
     width: 400px;
-    display: block;
   }
 }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Location, useLocation } from "react-router-dom";
 import { ReactComponent as DownArrow } from "../../../../assets/down-arrow.svg";
+import { ReactComponent as SignOut } from "../../../../assets/sign-out.svg";
 import { ReactComponent as Briefcase } from "../../../../assets/switch-organisation.svg";
 import { useLayout } from "../layout-wapper/LayoutContext";
 import { navigation } from "./navigationData";
@@ -49,6 +50,9 @@ export const SideNavigation = () => {
           </nav>
         </div>
       ))}
+      <nav className="side__nav__link">
+        <SignOut /> Logout
+      </nav>
     </div>
   );
 };

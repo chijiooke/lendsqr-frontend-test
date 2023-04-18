@@ -68,14 +68,17 @@ $break-points: (
 // grid system
 $grid-columns: 12;
 $grid-gaps: (
-  "0": 0px,
-  "1": 10px,
-  "2": 20px,
-  "3": 30px,
+  "0": 0rem,
+  "1": 1rem,
+  "2": 2rem,
+  "3": 3rem,
 );
 
 $content-property: flex-start, center, flex-end, space-between, space-around;
 
+.card {
+  @include card;
+}
 .container {
   width: 100%;
   box-sizing: border-box;
@@ -89,11 +92,15 @@ $content-property: flex-start, center, flex-end, space-between, space-around;
 }
 @each $key, $val in $grid-gaps {
   .gap-#{$key} > * {
-    padding: $val;
+    row-gap: $val;
+    column-gap: $val;
   }
   .gap-#{$key} {
-    margin-left: -$val;
-    margin-right: -$val;
+    // margin-left: -$val;
+    // margin-right: -$val;
+    row-gap: $val;
+    column-gap: $val;
+    // gap:$key ;
   }
 }
 

@@ -14,20 +14,26 @@ export const Header = () => {
   const { isSideNavOpen, setIsSideNavOpen } = useLayout();
   const currentDeviceSize = UseMediaQuery();
   return (
-    <div className="header__wrapper container justify-space-between">
-      {currentDeviceSize !== screenSize.DESKTOP && (
-        <button className="hamburger__menu" onClick={() => setIsSideNavOpen(!isSideNavOpen)}>
-          <HambergerMenu />
-        </button>
-      )}{" "}
-      <img src={logo} alt="logo" className="logo" />
-      <div className="container row justify-space-between gap-2 col-10-lg">
-        <form className=" col-0-xs col-4-md col-6-lg search__input__wrapper row">
+    <div className="header__wrapper">
+      <div>
+        {currentDeviceSize !== screenSize.DESKTOP && (
+          <button
+            className="hamburger__menu"
+            onClick={() => setIsSideNavOpen(!isSideNavOpen)}
+          >
+            <HambergerMenu />
+          </button>
+        )}{" "}
+        <img src={logo} alt="logo" className="logo" />
+      </div>
+
+      <div className="header__content__wrapper ">
+        <form className="search__input__wrapper">
           <input
-            className="search__input col-10-lg col-8-sm"
+            className="search__input"
             placeholder="search for anything..."
           />
-          <button className="search__btn col-1-lg col-2-sm justify-center row">
+          <button className="search__btn">
             <img src={searchIcon} alt="search" />
           </button>
         </form>

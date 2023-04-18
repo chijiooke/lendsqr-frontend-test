@@ -1,0 +1,69 @@
+@import "../../../../global-styles/maxins";
+@import "../../../../global-styles/variables";
+
+.user__grid__wrapper {
+  box-sizing: border-box;
+  margin-top: 1rem;
+  gap: 1rem;
+  justify-content: space-between;
+  
+  @include xs {
+    display: flex;
+    flex-direction: column;
+  }
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+  }
+}
+
+.user__grid__item {
+  @include card;
+  padding: 1rem;
+  border-radius: $border-radius;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user__grid__title {
+  font-size: 12px;
+  color: $darkblue-variant1;
+  margin-bottom: 0.1rem;
+}
+
+.user__grid__primary__info {
+  display: flex;
+  gap: 1rem;
+}
+
+.user__grid__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user__grid__value {
+  font-size: 14px;
+  color: $darkblue-variant2;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.user__grid__value__username {
+  color: $aqua-accent;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.user__grid__value__email {
+  font-size: 12px;
+  color: $darkblue-variant2;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+.user__grid__actions__wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

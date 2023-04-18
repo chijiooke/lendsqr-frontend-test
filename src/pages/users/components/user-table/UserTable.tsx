@@ -13,7 +13,7 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
-  useReactTable
+  useReactTable,
 } from "@tanstack/react-table";
 import { useNavigate } from "react-router-dom";
 import ContextMenu from "../../../../shared/UIElements/constext-menu/ContextMenu";
@@ -30,6 +30,7 @@ export const Table: React.FC<{
     }[]
   ) => void;
 }> = ({ users, filterFn }) => {
+
   const [isFilterPopperOpen, setIsFilterPopperOpen] =
     React.useState<boolean>(false);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
@@ -38,6 +39,7 @@ export const Table: React.FC<{
   >(null);
 
   const navigate = useNavigate();
+
   const handleFIlterPopperToggle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -143,7 +145,7 @@ export const Table: React.FC<{
   });
 
   return (
-    <div>
+    <div style={{ width: "100%", overflow: "scroll" }}>
       <ContextMenu
         anchorEl={anchorEl}
         open={isFilterPopperOpen}

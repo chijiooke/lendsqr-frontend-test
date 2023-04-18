@@ -30,12 +30,20 @@
 
 .user__personal__information {
   @include card-stack(5);
+  @include sm{
+    @include card-stack(4);
+
+  }
 }
 
 .user__education,
 .user__guarantor,
 .user__socials {
   @include card-stack(4);
+  @include sm{
+    @include card-stack(3);
+
+  }
 }
 
 .user__detail {

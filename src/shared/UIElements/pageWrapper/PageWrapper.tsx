@@ -1,8 +1,7 @@
-import React, { FC, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { Location, useLocation } from "react-router-dom";
 import { screenSize } from "../../../pages/users/types/ScreenSize.enum";
 import { UseMediaQuery } from "../../hooks/useMediaQuery";
-import { useLayout } from "../../layout/components/layout-wapper/LayoutContext";
 import { capitalizeText } from "../../utils/capitalizeText";
 
 import "./PageWrapper.styles.scss";

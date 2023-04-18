@@ -11,6 +11,9 @@ import "./styles/UserPage.styles.scss";
 import { useEffect, useState } from "react";
 import { UserType } from "./types/UserDetailTypes";
 import Loader from "../../shared/UIElements/loader/Loader";
+import { UseMediaQuery } from "../../shared/hooks/useMediaQuery";
+import { screenSize } from "./types/ScreenSize.enum";
+import { UserGrid } from "./components/user-grid/UserGrid";
 
 export enum filterTypes {
   ORGANIZATION = "organisation",
@@ -22,8 +25,32 @@ export enum filterTypes {
 
 const UsersPage = () => {
   const [users, setusers] = useState<UserType[]>([]);
+  const [users2, setusers2] = useState<UserType[]>([]);
+  const [searchInputQuery, setSearchInputQuery] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const currentDeviceSize = UseMediaQuery();
 
+  window.localStorage.setItem("users", JSON.stringify(users));
+
+  const searchfn = (query: string) => {
+    const data = JSON.parse(window.localStorage.getItem("users") as string);
+    if (query === "" || !query) {
+      if (!!data) {
+        setusers([...users2]);
+      }
+    }
+    setusers((prev) =>
+      users2.filter((user: UserType) =>
+        user.userName.toLowerCase().includes(query.toLowerCase() as string)
+      )
+    );
+  };
+
+  useEffect(() => {
+    searchfn(searchInputQuery);
+  }, [searchInputQuery]);
+
+  const userT = users;
   const filterFn: (
     filterBy: {
       filterType: filterTypes;
@@ -69,15 +96,18 @@ const UsersPage = () => {
   ];
 
   const getUsers = () => {
+    setLoading(true);
     return axios
       .get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
-      .then((res) => setusers(res?.data as UserType[]))
+      .then((res) => {
+        setusers(res?.data as UserType[]);
+        setusers2(res?.data as UserType[]);
+      })
       .catch((err: any) => console.log(err))
       .finally(() => setLoading(false));
   };
 
   useEffect(() => {
-    setLoading(true);
     getUsers();
   }, []);
 
@@ -89,7 +119,7 @@ const UsersPage = () => {
         <>
           <div className="data__card__wrapper">
             {userData.map((data, index) => (
-              <div key={index}>
+              <div key={index} className="">
                 <DataCard
                   icon={data?.icon}
                   count={data.count}
@@ -98,7 +128,20 @@ const UsersPage = () => {
               </div>
             ))}
           </div>
-          <Table users={users} filterFn={filterFn} />
+          {currentDeviceSize !== screenSize.DESKTOP && (
+            <div>
+              <input
+                className="search__users__input"
+                placeholder="search users by username..."
+                onChange={(e) => setSearchInputQuery(e.target.value)}
+              />
+            </div>
+          )}
+          {currentDeviceSize === screenSize.DESKTOP ? (
+            <Table users={users} filterFn={filterFn} />
+          ) : (
+            <UserGrid users={userT} />
+          )}
         </>
       )}
     </PageWrapper>
