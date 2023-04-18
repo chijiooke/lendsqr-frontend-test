@@ -61,9 +61,24 @@
 }
 
 .lendsqr__logo {
-  position: fixed;
-  top: 4rem;
-  left: 5rem;
+  @include xs {
+    position: relative;
+    width: 40%;
+    position: fixed;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    top: 5rem;
+  }
+  @include sm {
+    width: 30%;
+  }
+  @include lg {
+    position: fixed;
+    top: 4rem;
+    left: 5rem;
+    width: auto;
+  }
 }
 
 .sign__in__form {
@@ -77,7 +92,6 @@
     box-sizing: border-box;
   }
   @include lg {
-    
     width: 450px;
     box-sizing: border-box;
   }
@@ -117,7 +131,7 @@
   }
 }
 
-.password__input {
+.sign__in__input {
   font-family: "Avenir Next";
   border: none;
   outline: none;
@@ -125,6 +139,11 @@
   height: 3rem;
   margin-left: 0.8rem;
   border-radius: 0.5rem;
+}
+.form__input__wrapper:hover,
+.form__input__wrapper:focus {
+  border: 1px solid $aqua-accent;
+  transition: 0.4s;
 }
 
 .show__password__btn {

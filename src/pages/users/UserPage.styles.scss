@@ -21,7 +21,7 @@
   }
 }
 
-.search__users__input__wrapper{
+.search__users__input__wrapper {
   display: flex;
   width: fit-content;
   box-sizing: border-box;
@@ -34,11 +34,10 @@
   border: 1px solid $darkblue-variant3;
   padding-right: 1rem;
   border-radius: 0.4rem;
-  overflow: hidden;
-  @include xs{
+  // overflow: hidden;
+  @include xs {
     width: 100%;
   }
-  
 }
 
 .search__users__input {
@@ -49,16 +48,16 @@
   border: 0;
   margin-right: 1rem;
   width: 400px;
-
-  @include xs{
+  outline: none;
+  @include xs {
     width: 100%;
   }
 }
 
-
-.search__users__input:focus{
- border: 1px solid $aqua-accent;
- outline: none;
- box-shadow: $shadow;
-
+.search__users__input__wrapper:focus,
+.search__users__input__wrapper:hover {
+  border: 1px solid $aqua-accent;
+  // outline: none;
+  transition: 0.4s;
+  box-shadow: $shadow;
 }

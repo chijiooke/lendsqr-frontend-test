@@ -17,7 +17,7 @@ const SignInPage = () => {
 
   return (
     <div className="sign_In__wrapper">
-      <img src={logo} alt="lendsqr" className="lendsqr__logo"/>
+      <img src={logo} alt="lendsqr" className="lendsqr__logo" />
       <div className="hero__section">
         <img src={hero} />
       </div>
@@ -28,9 +28,16 @@ const SignInPage = () => {
         <form className="sign__in__form">
           <div className="form__input__wrapper">
             <input
+              type="email"
+              placeholder="email address"
+              className="sign__in__input"
+            />
+          </div>
+          <div className="form__input__wrapper">
+            <input
               type={!showingPassword ? "password" : "text"}
               placeholder="password"
-              className="password__input"
+              className="sign__in__input"
             />
             <button
               className="show__password__btn"
@@ -41,20 +48,7 @@ const SignInPage = () => {
             </button>
           </div>
 
-          <div className="form__input__wrapper">
-            <input
-              type={!showingPassword ? "password" : "text"}
-              placeholder="password"
-              className="password__input"
-            />
-            <button
-              className="show__password__btn"
-              type="button"
-              onClick={() => setShowingPassword(!showingPassword)}
-            >
-              {!showingPassword ? "SHOW" : "HIDE"}
-            </button>
-          </div>
+         
           <Link className="forgot__password__link" to={"/forgot-password"}>
             FORGOT PASSWORD?
           </Link>
