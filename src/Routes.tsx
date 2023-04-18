@@ -16,7 +16,7 @@ function App() {
         <Route element={<AuthProvider />}>
           <Route path="/" element={<SignInPage />} />
           <Route element={<Layout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<UsersPage />} />
             <Route path="/users" element={<UsersPage />} />
             <Route path="/users/:id" element={<UserDetailPage />} />
           </Route>
