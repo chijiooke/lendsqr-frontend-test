@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackButton from "../../common/UIElements/back-arrow-button/BackButton";
-import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
+import BackButton from "../../shared/UIElements/back-arrow-button/BackButton";
+import PageWrapper from "../../shared/UIElements/pageWrapper/PageWrapper";
 import "./NotFound.styles.scss";
 
 const NotFound = () => {

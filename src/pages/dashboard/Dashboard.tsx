@@ -1,5 +1,5 @@
 import React from "react";
-import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
+import PageWrapper from "../../shared/UIElements/pageWrapper/PageWrapper";
 
 const Dashboard = () => {
   return (

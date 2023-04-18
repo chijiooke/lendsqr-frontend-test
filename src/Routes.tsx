@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./common/layout/components/auth-wrapper/AuthContext";
-import { Layout } from "./common/layout/components/Layout";
+import { AuthProvider } from "./shared/layout/components/auth-wrapper/AuthContext";
+import { Layout } from "./shared/layout/components/Layout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import SignInPage from "./pages/sign-in/SignInPage";
 import { BrowserRouter } from "react-router-dom";

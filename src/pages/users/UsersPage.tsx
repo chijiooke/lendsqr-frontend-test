@@ -2,7 +2,7 @@ import { ReactComponent as ActiveUsers } from "../../assets/dashcard-active-user
 import { ReactComponent as UsersWIthLoans } from "../../assets/dashcard-users-with-loans.svg";
 import { ReactComponent as UsersWithSavings } from "../../assets/dashcard-users-with-savings.svg";
 import { ReactComponent as Users } from "../../assets/dashcard-users.svg";
-import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
+import PageWrapper from "../../shared/UIElements/pageWrapper/PageWrapper";
 import axios from "axios";
 
 import DataCard from "./components/data-card/DataCard";
@@ -10,7 +10,7 @@ import { Table } from "./components/user-table/UserTable";
 import "./styles/UserPage.styles.scss";
 import { useEffect, useState } from "react";
 import { UserType } from "./types/UserDetailTypes";
-import Loader from "../../common/UIElements/loader/Loader";
+import Loader from "../../shared/UIElements/loader/Loader";
 
 const UsersPage = () => {
   const [users, setusers] = useState<UserType[]>([]);

@@ -2,11 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import avatar from "../../assets/avatar.svg";
-import BackButton from "../../common/UIElements/back-arrow-button/BackButton";
-import Loader from "../../common/UIElements/loader/Loader";
-import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
-import Tabs from "../../common/UIElements/tabs/Tabs";
-import { formatAmount } from "../../common/utils/formatAmount";
+import BackButton from "../../shared/UIElements/back-arrow-button/BackButton";
+import Loader from "../../shared/UIElements/loader/Loader";
+import PageWrapper from "../../shared/UIElements/pageWrapper/PageWrapper";
+import Tabs from "../../shared/UIElements/tabs/Tabs";
+import { formatAmount } from "../../shared/utils/formatAmount";
 import { Rating } from "react-simple-star-rating";
 
 import { UserType } from "../users/types/UserDetailTypes";

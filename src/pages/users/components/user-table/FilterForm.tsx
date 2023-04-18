@@ -2,7 +2,7 @@ import React from "react";
 import Button, {
   ButtonColorType,
   ButtonVariantType,
-} from "../../../../common/UIElements/button/Button";
+} from "../../../../shared/UIElements/button/Button";
 import { UserType } from "../../types/UserDetailTypes";
 
 const FilterForm: React.FC<{ users: UserType[] }> = ({ users }) => {

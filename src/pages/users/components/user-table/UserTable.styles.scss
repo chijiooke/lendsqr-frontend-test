@@ -51,11 +51,19 @@
   gap: 0.5rem;
 }
 
-.more__actions__btn:hover{
+.more__actions__btn:hover {
   color: $aqua-accent;
   transition: 0.2s;
 }
 
+.user__status {
+  color: $aqua-accent;
+  background-color: #39CD6226;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  width: fit-content;
+}
 table {
   background-color: $white;
   width: 100%;

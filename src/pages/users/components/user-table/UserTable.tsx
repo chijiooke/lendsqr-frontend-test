@@ -15,7 +15,7 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import ContextMenu from "../../../../common/UIElements/constext-menu/ContextMenu";
+import ContextMenu from "../../../../shared/UIElements/constext-menu/ContextMenu";
 import { UserType } from "../../types/UserDetailTypes";
 import FilterForm from "./FilterForm";
 import { useNavigate } from "react-router-dom";
@@ -110,7 +110,7 @@ export const Table: React.FC<{ users: UserType[] }> = ({ users }) => {
     }),
     columnHelper.accessor((row) => row.createdAt, {
       id: "status",
-      cell: (info) => <div>Hello</div>,
+      cell: (info) => <div className="user__status">Active</div>,
       header: () => (
         <span className="table__header">Status {filterButton}</span>
       ),
