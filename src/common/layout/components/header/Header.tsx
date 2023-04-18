@@ -3,7 +3,7 @@ import { ReactComponent as DownArrow } from "../../../../assets/down-arrow.svg";
 import logo from "../../../../assets/logo.png";
 import { ReactComponent as Bell } from "../../../../assets/notification-bell.svg";
 import avatar from "../../../../assets/profile_picture.png";
-import searchIcon from "../../../../assets/vector.svg";
+import searchIcon from "../../../../assets/search.svg";
 import "./Header.styles.scss";
 
 export const Header = () => {
