@@ -4,10 +4,10 @@ A loan manangement admin dashboard
 
 Demo site: https://silva-chijioke-michael-lendsqr-fe-test.vercel.app
 
-    components/: React components
-    pages/: React Pagges, Components and scoped styles
+    pages/: React Pages, Components and scoped styles
     assets/: Resources from Provided Figma UI
     shared/: components and type definitions shared globally accross app
+    global-styles/: Sass global variables and mixins
 
 Development
 Install
