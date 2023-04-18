@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Location, useLocation } from "react-router-dom";
 import { ReactComponent as DownArrow } from "../../../../assets/down-arrow.svg";
 import { ReactComponent as Briefcase } from "../../../../assets/switch-organisation.svg";
+import { useLayout } from "../layout-wapper/LayoutContext";
 import { navigation } from "./navigationData";
 import "./SideNavigation.styles.scss";
 
@@ -11,8 +12,13 @@ export const SideNavigation = () => {
     null | (EventTarget & HTMLButtonElement)
   >(null);
 
+  const { isSideNavOpen } = useLayout();
+
   return (
-    <div className="navigation__wrapper">
+    <div
+      style={{ width: !isSideNavOpen ? 0 : "250px" }}
+      className="navigation__wrapper"
+    >
       <button
         className="switch__organisation__btn"
         onClick={(e) => {

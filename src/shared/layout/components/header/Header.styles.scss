@@ -8,6 +8,9 @@
   @include md {
     width: 100px;
   }
+  @include md {
+    width: 100px;
+  }
 }
 
 .header__wrapper {
@@ -27,6 +30,12 @@
   align-items: center;
 }
 
+
+.hamburger__menu{
+  border: 0;
+  background-color: transparent;
+  color: $darkblue-variant1;
+}
 .header__content__wrapper {
   display: flex;
   gap: 2rem;
@@ -36,19 +45,29 @@
   box-sizing: border-box;
 }
 .search__input__wrapper {
-  display: flex;
-  flex-direction: row;
   gap: 0;
+  @include xs {
+    display: none;
+  }
+  @include md {
+    display: flex;
+  }
 }
 .search__input {
   padding: 0.8rem;
   box-sizing: border-box;
   margin: 0;
   border: 1px solid $darkblue-variant3;
-  width: 400px;
+
   border-radius: 0.4rem 0 0 0.4rem;
+
   @include md {
     width: 200px;
+    display: block;
+  }
+  @include lg {
+    width: 400px;
+    display: block;
   }
 }
 

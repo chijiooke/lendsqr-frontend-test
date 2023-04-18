@@ -68,7 +68,7 @@ $break-points: (
 // grid system
 $grid-columns: 12;
 $grid-gaps: (
-  "0": 0,
+  "0": 0px,
   "1": 10px,
   "2": 20px,
   "3": 30px,
@@ -98,8 +98,11 @@ $content-property: flex-start, center, flex-end, space-between, space-around;
 }
 
 // justify content classes
-
-
+@each $val in $content-property {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
+}
 
 // grid utillity classes
 @include xs {
