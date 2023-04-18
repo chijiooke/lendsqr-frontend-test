@@ -7,10 +7,10 @@ import { ReactComponent as Guarantors } from "../../../../assets/guarantors.svg"
 import { ReactComponent as Karma } from "../../../../assets/karma.svg";
 import {
   ReactComponent as LoanProducts,
-  ReactComponent as LoanRequests,
+  ReactComponent as LoanRequests
 } from "../../../../assets/loan-requests.svg";
 import { ReactComponent as Loans } from "../../../../assets/loans.svg";
-import { ReactComponent as Organization } from "../../../../assets/Organisation.svg";
+import { ReactComponent as Organization } from "../../../../assets/organisation.svg";
 import { ReactComponent as Preferences } from "../../../../assets/preferences.svg";
 import { ReactComponent as Reports } from "../../../../assets/reports.svg";
 import { ReactComponent as SavingsProducts } from "../../../../assets/savings-product.svg";

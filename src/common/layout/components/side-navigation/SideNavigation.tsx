@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Link, Location, useLocation } from "react-router-dom";
 import { ReactComponent as DownArrow } from "../../../../assets/down-arrow.svg";
 import { ReactComponent as Briefcase } from "../../../../assets/switch-organisation.svg";
-import ContextMenu from "../../../UIElements/constext-menu/ContextMenu";
-import ContextMenuButton from "../../../UIElements/constext-menu/ContextMenuButton";
 import { navigation } from "./navigationData";
 import "./SideNavigation.styles.scss";
 
