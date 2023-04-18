@@ -12,9 +12,55 @@ import { useEffect, useState } from "react";
 import { UserType } from "./types/UserDetailTypes";
 import Loader from "../../shared/UIElements/loader/Loader";
 
+export enum filterTypes {
+  ORGANIZATION = "organisation",
+  USERNAME = "username",
+  EMAIL = "email",
+  DATE = "date",
+  PHONE_NUMBER = "phone-number",
+}
+
 const UsersPage = () => {
   const [users, setusers] = useState<UserType[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+
+  const filterFn: (
+    filterBy: {
+      filterType: filterTypes;
+      fillterValue: string;
+    }[]
+  ) => void = (filterBy) => {
+    let filteredUsers: UserType[];
+    filterBy.map((it) => {
+      if (it.filterType === filterTypes.USERNAME) {
+        filteredUsers = users.filter((user) =>
+          user.userName.includes(it.fillterValue as string)
+        );
+      }
+      // if (it.filterType === filterTypes.DATE) {
+      //   filteredUsers = users.filter((user) => {
+      //     user.createdAt === it.fillterValue;
+      //   });
+      // }
+      // if (it.filterType === filterTypes.EMAIL) {
+      //   filteredUsers = users.filter((user) =>
+      //     user.email.includes(it.fillterValue as string)
+      //   );
+      // }
+      // if (it.filterType === filterTypes.PHONE_NUMBER) {
+      //   filteredUsers = users.filter((user) =>
+      //     user.phoneNumber.includes(it.fillterValue as string)
+      //   );
+      // }
+      // if (it.filterType === filterTypes.ORGANIZATION) {
+      //   filteredUsers = users.filter(
+      //     (user) => user.orgName === (it.fillterValue as string)
+      //   );
+      // }
+
+      setusers(filteredUsers);
+    });
+  };
   const userData = [
     { title: "USERS", count: "2,453", icon: Users },
     { title: "Active Users", count: "2,453", icon: ActiveUsers },
@@ -52,7 +98,7 @@ const UsersPage = () => {
               </div>
             ))}
           </div>
-          <Table users={users} />
+          <Table users={users} filterFn={filterFn} />
         </>
       )}
     </PageWrapper>

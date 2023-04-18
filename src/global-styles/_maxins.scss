@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "./variables";
 
 @mixin vertical-list($align-items) {
@@ -19,4 +20,112 @@
   font-size: $size;
   color: $darkblue-variant1;
   font-weight: 600;
+}
+
+
+$break-points: (
+  "xs": "0px",
+  "sm": "480px",
+  "md": "720px",
+  "lg": "960px",
+  "xl": "1200px",
+);
+
+@mixin xs {
+  @media (min-width: map-get($break-points,"xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($break-points,"sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($break-points,"md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($break-points,"lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($break-points,"xl")) {
+    @content;
+  }
+}
+@mixin breakpoint($custom: 0) {
+  @media (min-width: $custom) {
+    @content;
+  }
+}
+
+
+// grid system
+$grid-columns: 12;
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+// grid utillity classes
+@include xs {
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}-xs {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include sm {
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}-sm {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include md {
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}-md {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include lg {
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}-lg {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include xl {
+  @for $i from 1 through $grid-columns {
+    .col-#{$i}-xl {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
 }

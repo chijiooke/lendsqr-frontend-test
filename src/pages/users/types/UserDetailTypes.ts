@@ -1,8 +1,8 @@
 export type UserType = {
   createdAt: string;
   orgName: string;
-  userName: number;
-  email: number;
+  userName: string;
+  email: string;
   phoneNumber: string;
   lastActiveDate: number;
   profile: UserProfileType;

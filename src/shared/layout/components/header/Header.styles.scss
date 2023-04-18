@@ -1,9 +1,13 @@
 @import "../../../../global-styles/variables";
+@import "../../../../global-styles/maxins";
 
 .logo {
   width: 150px;
   height: 100%;
   box-sizing: border-box;
+  @include md {
+    width: 100px;
+  }
 }
 
 .header__wrapper {
@@ -43,6 +47,9 @@
   border: 1px solid $darkblue-variant3;
   width: 400px;
   border-radius: 0.4rem 0 0 0.4rem;
+  @include md {
+    width: 200px;
+  }
 }
 
 .search__input:focus {

@@ -13,14 +13,23 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
-  useReactTable,
+  useReactTable
 } from "@tanstack/react-table";
+import { useNavigate } from "react-router-dom";
 import ContextMenu from "../../../../shared/UIElements/constext-menu/ContextMenu";
 import { UserType } from "../../types/UserDetailTypes";
+import { filterTypes } from "../../UsersPage";
 import FilterForm from "./FilterForm";
-import { useNavigate } from "react-router-dom";
 
-export const Table: React.FC<{ users: UserType[] }> = ({ users }) => {
+export const Table: React.FC<{
+  users: UserType[];
+  filterFn: (
+    filterBy: {
+      filterType: filterTypes;
+      fillterValue: string;
+    }[]
+  ) => void;
+}> = ({ users, filterFn }) => {
   const [isFilterPopperOpen, setIsFilterPopperOpen] =
     React.useState<boolean>(false);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
@@ -141,7 +150,7 @@ export const Table: React.FC<{ users: UserType[] }> = ({ users }) => {
         handleClose={handleCloseFilter}
       >
         <>
-          <FilterForm users={users} />
+          <FilterForm users={users} filterFn={filterFn} />
         </>
       </ContextMenu>
       <ContextMenu
