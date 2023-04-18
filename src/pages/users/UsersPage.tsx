@@ -2,18 +2,20 @@ import { ReactComponent as ActiveUsers } from "../../assets/dashcard-active-user
 import { ReactComponent as UsersWIthLoans } from "../../assets/dashcard-users-with-loans.svg";
 import { ReactComponent as UsersWithSavings } from "../../assets/dashcard-users-with-savings.svg";
 import { ReactComponent as Users } from "../../assets/dashcard-users.svg";
+import { ReactComponent as SearchIcon } from "../../assets/search.svg";
 import PageWrapper from "../../shared/UIElements/pageWrapper/PageWrapper";
 import axios from "axios";
 
 import DataCard from "./components/data-card/DataCard";
 import { Table } from "./components/user-table/UserTable";
-import "./styles/UserPage.styles.scss";
+import "./UserPage.styles.scss";
 import { useEffect, useState } from "react";
 import { UserType } from "./types/UserDetailTypes";
 import Loader from "../../shared/UIElements/loader/Loader";
 import { UseMediaQuery } from "../../shared/hooks/useMediaQuery";
 import { screenSize } from "./types/ScreenSize.enum";
 import { UserGrid } from "./components/user-grid/UserGrid";
+import { SearchNormal } from "iconsax-react";
 
 export enum filterTypes {
   ORGANIZATION = "organisation",
@@ -25,7 +27,7 @@ export enum filterTypes {
 
 const UsersPage = () => {
   const [users, setusers] = useState<UserType[]>([]);
-  const [users2, setusers2] = useState<UserType[]>([]);
+  const [persistedData, setpersistedData] = useState<UserType[]>([]);
   const [searchInputQuery, setSearchInputQuery] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const currentDeviceSize = UseMediaQuery();
@@ -34,13 +36,8 @@ const UsersPage = () => {
 
   const searchfn = (query: string) => {
     const data = JSON.parse(window.localStorage.getItem("users") as string);
-    if (query === "" || !query) {
-      if (!!data) {
-        setusers([...users2]);
-      }
-    }
-    setusers((prev) =>
-      users2.filter((user: UserType) =>
+    setusers(
+      persistedData.filter((user: UserType) =>
         user.userName.toLowerCase().includes(query.toLowerCase() as string)
       )
     );
@@ -50,7 +47,6 @@ const UsersPage = () => {
     searchfn(searchInputQuery);
   }, [searchInputQuery]);
 
-  const userT = users;
   const filterFn: (
     filterBy: {
       filterType: filterTypes;
@@ -101,7 +97,7 @@ const UsersPage = () => {
       .get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
       .then((res) => {
         setusers(res?.data as UserType[]);
-        setusers2(res?.data as UserType[]);
+        setpersistedData(res?.data as UserType[]);
       })
       .catch((err: any) => console.log(err))
       .finally(() => setLoading(false));
@@ -129,18 +125,22 @@ const UsersPage = () => {
             ))}
           </div>
           {currentDeviceSize !== screenSize.DESKTOP && (
-            <div>
+            <div className="search__users__input__wrapper">
               <input
                 className="search__users__input"
-                placeholder="search users by username..."
+                placeholder={`search users by username...`}
                 onChange={(e) => setSearchInputQuery(e.target.value)}
               />
+              <SearchNormal />
             </div>
           )}
+          <div className="container row justify-center">
+            {!users.length && !loading && <p>No Users ...</p>}
+          </div>
           {currentDeviceSize === screenSize.DESKTOP ? (
             <Table users={users} filterFn={filterFn} />
           ) : (
-            <UserGrid users={userT} />
+            <UserGrid users={users} />
           )}
         </>
       )}

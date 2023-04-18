@@ -5,8 +5,8 @@
   width: 150px;
   height: 100%;
   box-sizing: border-box;
-  @include md {
-    width: 100px;
+  @include xs {
+    width: 90px;
   }
   @include md {
     width: 100px;
@@ -34,6 +34,8 @@
   border: 0;
   background-color: transparent;
   color: $darkblue-variant1;
+  cursor: pointer;
+  margin-right: 0.8rem;
 }
 .header__content__wrapper {
   display: flex;
@@ -54,6 +56,12 @@
   width: 100%;
   box-sizing: border-box;
   flex-direction: row;
+  @include xs {
+    display: none;
+  }
+  @include sm {
+    display: none;
+  }
   @include md {
     display: none;
   }
@@ -93,11 +101,21 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  
 }
 .notifications__btn {
   border-radius: 50%;
   border: 0;
   background-color: transparent;
+  @include xs {
+    display: none;
+  }
+  @include sm {
+    display: none;
+  }
+  @include md {
+    display: block;
+  }
 }
 .notifications__btn:hover {
   cursor: pointer;
@@ -122,6 +140,15 @@
 
 .docs__link {
   color: $darkblue-variant2;
+  @include xs {
+    display: none;
+  }
+  @include sm {
+    display: none;
+  }
+  @include md {
+    display: block;
+  }
 }
 
 .avatar {

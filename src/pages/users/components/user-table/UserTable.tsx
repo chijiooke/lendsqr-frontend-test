@@ -30,7 +30,6 @@ export const Table: React.FC<{
     }[]
   ) => void;
 }> = ({ users, filterFn }) => {
-
   const [isFilterPopperOpen, setIsFilterPopperOpen] =
     React.useState<boolean>(false);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
@@ -152,7 +151,11 @@ export const Table: React.FC<{
         handleClose={handleCloseFilter}
       >
         <>
-          <FilterForm users={users} filterFn={filterFn} />
+          <FilterForm
+            users={users}
+            filterFn={filterFn}
+            handleCloseFilter={handleCloseFilter}
+          />
         </>
       </ContextMenu>
       <ContextMenu

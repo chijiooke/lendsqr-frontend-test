@@ -3,6 +3,9 @@
 
 .tab__wrapper {
   @include horizontal-list;
+  @include xs{
+    overflow-x: scroll;
+  }
 }
 
 .tab {
@@ -12,6 +15,7 @@
   color: $darkblue-variant2;
   border: 0;
   background-color: transparent;
+  white-space: nowrap;
 }
 
 .active__tab{

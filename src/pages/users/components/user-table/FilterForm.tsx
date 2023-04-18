@@ -8,13 +8,14 @@ import { filterTypes } from "../../UsersPage";
 
 const FilterForm: React.FC<{
   users: UserType[];
+  handleCloseFilter: () => void;
   filterFn: (
     filterBy: {
       filterType: filterTypes;
       fillterValue: string;
     }[]
   ) => void;
-}> = ({ users, filterFn }) => {
+}> = ({ users, filterFn, handleCloseFilter }) => {
   const [organisation, setorganisation] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -79,6 +80,7 @@ const FilterForm: React.FC<{
           <Button
             onClick={() => {
               filterFn(filter);
+              handleCloseFilter();
             }}
             label="Filter"
             type="submit"

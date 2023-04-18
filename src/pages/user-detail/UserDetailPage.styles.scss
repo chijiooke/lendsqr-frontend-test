@@ -9,6 +9,16 @@
   font-weight: 600;
   color: $darkblue-variant1;
   margin-bottom: 2rem;
+  @include xs {
+    flex-direction: column;
+    align-items: start;
+    gap:1rem
+  }
+  @include sm {
+    flex-direction: row;
+    align-items: center;
+    gap:1rem;
+  }
 }
 
 .action__btns__wrapper {
@@ -59,22 +69,48 @@
   gap: 2rem;
 
   margin-bottom: 2rem;
+  @include xs {
+    flex-direction: column;
+    align-items: start;
+  }
+  @include sm {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .user__basic__details {
   display: flex;
   gap: 2rem;
+  @include xs {
+    flex-direction: column;
+    gap: 0rem;
+    justify-content: left;
+  }
+  @include sm {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+  }
 }
 
 .user__detail__card__item {
-  @include vertical-list('start');
+  @include vertical-list("start");
   text-align: left;
-  padding: 1rem;
-  padding-right: 3rem;
-  border-right: 0.8px solid $darkblue-variant3;
+  
   color: $darkblue-variant2;
   height: fit-content;
   min-height: 50px;
+
+  @include xs {
+    border: 0;
+    padding: 0.2rem;
+  }
+  @include sm {
+    padding: 1rem;
+    padding-right: 3rem;
+    border-right: 0.8px solid $darkblue-variant3;
+  }
 }
 
 .user__detail__card__item:last-child {
@@ -89,4 +125,18 @@
 .account__number {
   font-size: 12px;
   color: $darkblue-variant1;
+}
+
+.user__tier__title {
+  @include xs {
+    font-size: smaller;
+  }
+}
+
+.truncate {
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
 }

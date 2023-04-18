@@ -61,7 +61,7 @@ const UserDetailPage = () => {
               <div className="user__detail__card__item">
                 {" "}
                 <div>
-                  <p className="user__fullname">
+                  <p className="user__fullname truncate">
                     {userDetails?.profile?.firstName}{" "}
                     {userDetails?.profile?.lastName}
                   </p>
@@ -70,7 +70,7 @@ const UserDetailPage = () => {
               </div>
               <div className="user__detail__card__item">
                 {" "}
-                <p>User's Tier</p>
+                <p className="user__tier__title">User's Tier</p>
                 <Rating
                   initialValue={1}
                   iconsCount={3}

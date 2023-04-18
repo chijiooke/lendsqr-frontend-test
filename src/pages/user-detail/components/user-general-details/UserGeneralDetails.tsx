@@ -106,7 +106,7 @@ const UserGeneralDetails: FC<{ userDetails: UserType }> = ({ userDetails }) => {
       <div className="user__general__details__section">
         {" "}
         <p className="section__title">Personal Information</p>
-        <div className="user__personal__information">
+        <div className="user__personal__information truncate">
           {personalInformation.map((info) => (
             <DetailItem title={info?.title} value={info?.value} />
           ))}
@@ -115,7 +115,7 @@ const UserGeneralDetails: FC<{ userDetails: UserType }> = ({ userDetails }) => {
       <div className="user__general__details__section">
         {" "}
         <p className="section__title">Education and Employment</p>
-        <div className="user__education">
+        <div className="user__education ">
           {educationAndEmployment.map((info) => (
             <DetailItem title={info?.title} value={info?.value} />
           ))}

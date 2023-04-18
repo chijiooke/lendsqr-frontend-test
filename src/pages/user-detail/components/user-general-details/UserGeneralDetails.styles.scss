@@ -30,19 +30,36 @@
 
 .user__personal__information {
   @include card-stack(5);
-  @include sm{
-    @include card-stack(4);
 
+  @include xs {
+    @include card-stack(2);
   }
+
+  @include sm {
+    @include card-stack(3);
+  }
+
+  @include md {
+    @include card-stack(5);
+  }
+ 
+  
 }
 
 .user__education,
 .user__guarantor,
 .user__socials {
   @include card-stack(4);
-  @include sm{
+  @include sm {
     @include card-stack(3);
+  }
 
+  @include xs {
+    @include card-stack(2);
+  }
+
+  @include md {
+    @include card-stack(4);
   }
 }
 
