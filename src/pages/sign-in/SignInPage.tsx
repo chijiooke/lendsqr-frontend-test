@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import hero from "../../assets/hero.png";
 import { useAuth } from "../../shared/layout/components/auth-wrapper/AuthContext";
 import "./SignInPage.styles.scss";
+import logo from "../../assets//logo.png";
 
 const SignInPage = () => {
   const auth = useAuth();
@@ -16,6 +17,7 @@ const SignInPage = () => {
 
   return (
     <div className="sign_In__wrapper">
+      <img src={logo} alt="lendsqr" className="lendsqr__logo"/>
       <div className="hero__section">
         <img src={hero} />
       </div>
@@ -23,7 +25,7 @@ const SignInPage = () => {
         {" "}
         <h1 className="welcome__text">Welcome!</h1>
         <p className="sub__text">Enter details to login</p>
-        <form>
+        <form className="sign__in__form">
           <div className="form__input__wrapper">
             <input
               type={!showingPassword ? "password" : "text"}
@@ -53,7 +55,7 @@ const SignInPage = () => {
               {!showingPassword ? "SHOW" : "HIDE"}
             </button>
           </div>
-          <Link className="link" to={"/forgot-password"}>
+          <Link className="forgot__password__link" to={"/forgot-password"}>
             FORGOT PASSWORD?
           </Link>
           <button

@@ -1,38 +1,86 @@
 @import "../../global-styles/variables";
-@import "../../global-styles/mixins";
+@import "../../global-styles/maxins";
 
 .sign_In__wrapper {
-  display: grid;
-  grid-template-columns: 50% 50%;
   width: 100%;
   box-sizing: border-box;
   align-items: center;
   height: 100vh;
+  @include xs {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  @include lg {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
 }
 
 .hero__section {
   box-sizing: border-box;
-  display: flex;
   align-items: center;
   justify-content: center;
+  @include xs {
+    display: none;
+  }
+  @include md {
+    display: none;
+  }
+  @include lg {
+    display: flex;
+  }
 }
 .sign_in__form__wrapper {
-  box-shadow: $shadow;
   height: 100vh;
-  box-sizing: border-box;
   background-color: #fff;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   flex-direction: column;
   justify-self: end;
+  @include xs {
+    width: 100vw;
+    box-sizing: border-box;
+    box-shadow: none;
+    padding: 3rem;
+  }
+  @include sm {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+  }
+  @include lg {
+    padding-left: 8rem;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: $shadow;
+  }
 }
 
-form {
+.lendsqr__logo {
+  position: fixed;
+  top: 4rem;
+  left: 5rem;
+}
+
+.sign__in__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: fit-content;
+
+  @include xs {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  @include lg {
+    
+    width: 450px;
+    box-sizing: border-box;
+  }
 }
 
 .welcome__text {
@@ -62,6 +110,11 @@ form {
   width: 400px;
   border-radius: 0.5rem;
   display: flex;
+
+  @include xs {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .password__input {
@@ -90,11 +143,12 @@ form {
   transition: 0.4s;
 }
 
-.link {
+.forgot__password__link {
   color: $aqua-accent;
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-decoration: none;
   margin: 0.8rem 0;
+  font-size: 13px;
 }
 
 .sign_in__btn {

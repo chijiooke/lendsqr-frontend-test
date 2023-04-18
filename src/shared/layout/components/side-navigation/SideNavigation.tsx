@@ -8,12 +8,11 @@ import { navigation } from "./navigationData";
 import "./SideNavigation.styles.scss";
 
 export const SideNavigation = () => {
+  const { setIsSideNavOpen, isSideNavOpen } = useLayout();
   const location: Location = useLocation();
   const [anchorEl, setanchorEl] = useState<
     null | (EventTarget & HTMLButtonElement)
   >(null);
-
-  const { isSideNavOpen } = useLayout();
 
   return (
     <div
@@ -36,6 +35,7 @@ export const SideNavigation = () => {
           <nav className="side__nav__links">
             {it.links.map((link, key) => (
               <Link
+                onClick={() => setIsSideNavOpen(!isSideNavOpen)}
                 key={key}
                 to={link.path}
                 className={`side__nav__link ${
@@ -50,8 +50,10 @@ export const SideNavigation = () => {
           </nav>
         </div>
       ))}
-      <nav className="side__nav__link">
-        <SignOut /> Logout
+      <nav>
+        <Link to={"/"} className={`side__nav__link `}>
+          <SignOut /> Logout
+        </Link>{" "}
       </nav>
     </div>
   );
