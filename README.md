@@ -1,4 +1,4 @@
-# lendsqr-frontend-assesment
+# lendsqr-frontend-test
 
 A loan manangement admin dashboard 
 
