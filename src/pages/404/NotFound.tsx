@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import BackButton from "../../common/UIElements/back-arrow-button/BackButton";
+import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
+import "./NotFound.styles.scss";
 
 const NotFound = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      404 Not found
+    // <PageWrapper>
+    <div className="not__found__wrapper">
+      <p className="status__code">404</p>
+      <p>Page Not Found</p>
+      <BackButton path="/dashboard" text="Take Me to dashboard" />
     </div>
-  )
-}
+    // </PageWrapper>
+  );
+};
 
-export default NotFound
+export default NotFound;

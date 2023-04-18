@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import hero from "../../assets/hero.png";
 import { useAuth } from "../../common/layout/components/auth-wrapper/AuthContext";
-import FormInput from "../../common/UIElements/FormInput";
 import "./SignInPage.styles.scss";
 
 const SignInPage = () => {
