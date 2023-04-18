@@ -1,5 +1,5 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/maxins";
+@import "../../../../global-styles/variables";
+@import "../../../../global-styles/maxins";
 
 @mixin card-stack($columns) {
   display: grid;
@@ -11,6 +11,7 @@
 .user__general__details__wrapper {
   @include card;
   padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .user__general__details__section {

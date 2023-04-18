@@ -1,4 +1,61 @@
-@import "../../../../styles/variables";
+@import "../../../../global-styles/variables";
+@import "../../../../global-styles/maxins";
+
+.table__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filter__btn {
+  background-color: transparent;
+  border: 0;
+  position: relative;
+}
+
+.filter__field {
+  @include vertical-list("center");
+  gap: 0.6rem;
+  width: 250px;
+}
+
+.filter__input {
+  padding: 0.5rem;
+  border: 1px solid $darkblue-variant3;
+  color: $darkblue-variant2;
+  border-radius: $border-radius;
+  background-color: transparent;
+}
+.filter__input:hover,
+.filter__input:focus {
+  border: 1px solid $aqua-accent;
+  outline: none;
+}
+
+.filter__footer {
+  display: flex;
+  gap: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.more__actions__wrapper {
+  @include vertical-list("center");
+  gap: 1rem;
+}
+
+.more__actions__btn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: 0;
+  gap: 0.5rem;
+}
+
+.more__actions__btn:hover{
+  color: $aqua-accent;
+  transition: 0.2s;
+}
+
 table {
   background-color: $white;
   width: 100%;

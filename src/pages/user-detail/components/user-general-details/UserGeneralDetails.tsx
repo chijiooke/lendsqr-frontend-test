@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { UserType } from "../../../users/components/table/UserDetailTypes";
+import { UserType } from "../../../users/types/UserDetailTypes";
 import "./UserGeneralDetails.styles.scss";
 
 const UserGeneralDetails: FC<{ userDetails: UserType }> = ({ userDetails }) => {

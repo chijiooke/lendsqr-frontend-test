@@ -1,13 +1,30 @@
+import { useState } from "react";
 import { Link, Location, useLocation } from "react-router-dom";
+import { ReactComponent as DownArrow } from "../../../../assets/down-arrow.svg";
+import { ReactComponent as Briefcase } from "../../../../assets/switch-organisation.svg";
+import ContextMenu from "../../../UIElements/constext-menu/ContextMenu";
+import ContextMenuButton from "../../../UIElements/constext-menu/ContextMenuButton";
 import { navigation } from "./navigationData";
 import "./SideNavigation.styles.scss";
 
-
 export const SideNavigation = () => {
   const location: Location = useLocation();
+  const [anchorEl, setanchorEl] = useState<
+    null | (EventTarget & HTMLButtonElement)
+  >(null);
 
   return (
     <div className="navigation__wrapper">
+      <button
+        className="switch__organisation__btn"
+        onClick={(e) => {
+          setanchorEl(e?.currentTarget);
+          e.stopPropagation();
+        }}
+      >
+        <Briefcase /> Switch Organization <DownArrow />
+      </button>
+
       {navigation.map((it, key) => (
         <div key={key}>
           <p className="side__nav__group">{it.group}</p>

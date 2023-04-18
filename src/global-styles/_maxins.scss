@@ -1,9 +1,9 @@
 @import "./variables";
 
-@mixin vertical-list {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+@mixin vertical-list($align-items) {
+  display: flex;
+  align-items: $align-items;
+  flex-direction: column;
 }
 @mixin horizontal-list {
   display: flex;
@@ -20,4 +20,3 @@
   color: $darkblue-variant1;
   font-weight: 600;
 }
-

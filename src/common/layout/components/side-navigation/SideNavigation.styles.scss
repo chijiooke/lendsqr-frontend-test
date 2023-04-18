@@ -1,4 +1,4 @@
-@import "../../../../styles/variables.scss";
+@import "../../../../global-styles/variables.scss";
 
 .navigation__wrapper {
   background-color: #fff;
@@ -8,9 +8,19 @@
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  padding-top: 5rem;
+  padding-top: 7rem;
   max-height: 100vh;
   overflow-y: scroll;
+}
+.switch__organisation__btn {
+  margin-left: 2rem;
+  display: flex;
+  border: 0;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: $darkblue-variant2;
+  background-color: transparent;
+
 }
 .side__nav__group {
   color: $darkblue-variant2;

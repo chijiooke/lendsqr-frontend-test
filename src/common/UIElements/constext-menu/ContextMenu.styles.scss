@@ -1,0 +1,23 @@
+@import "../../../global-styles/variables";
+
+.context__menu__wrapper {
+  background-color: #fff;
+  padding: 1rem;
+  position: absolute;
+  z-index: 4;
+  box-shadow: $shadow;
+}
+
+.context__menu__btn {
+  color: $darkblue-variant2;
+  font-size: 14px;
+  background-color: transparent;
+  border: 0;
+  padding: 0.8rem;
+  border-radius: $border-radius;
+}
+
+.context__menu__btn:hover {
+  background-color: $background-gray;
+  transition: 0.4s;
+}

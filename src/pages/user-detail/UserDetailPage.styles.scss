@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/maxins";
+@import "../../global-styles/variables";
+@import "../../global-styles/maxins";
 
 .user__details__header {
   display: flex;
@@ -67,7 +67,7 @@
 }
 
 .user__detail__card__item {
-  @include vertical-list;
+  @include vertical-list('start');
   text-align: left;
   padding: 1rem;
   padding-right: 3rem;

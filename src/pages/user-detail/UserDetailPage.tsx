@@ -2,12 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import avatar from "../../assets/avatar.svg";
-import BackButton from "../../common/UIElements/back-button/BackButton";
+import BackButton from "../../common/UIElements/back-arrow-button/BackButton";
+import Loader from "../../common/UIElements/loader/Loader";
 import PageWrapper from "../../common/UIElements/pageWrapper/PageWrapper";
 import Tabs from "../../common/UIElements/tabs/Tabs";
 import { formatAmount } from "../../common/utils/formatAmount";
+import { Rating } from "react-simple-star-rating";
 
-import { UserType } from "../users/components/table/UserDetailTypes";
+import { UserType } from "../users/types/UserDetailTypes";
 import UserGeneralDetails from "./components/user-general-details/UserGeneralDetails";
 import { tabs } from "./types/tabs.enums";
 import "./UserDetailPage.styles.scss";
@@ -25,11 +27,16 @@ const UserDetailPage = () => {
         `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`
       )
       .then((res) => setuserDetails(res.data))
+      .catch((err) => console.error(err))
       .finally(() => setIsLoading(false));
   }, []);
 
   if (!userDetails || isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <PageWrapper>
+        <Loader />
+      </PageWrapper>
+    );
   }
   return (
     <PageWrapper>
@@ -64,6 +71,14 @@ const UserDetailPage = () => {
               <div className="user__detail__card__item">
                 {" "}
                 <p>User's Tier</p>
+                <Rating
+                  initialValue={1}
+                  iconsCount={3}
+                  size={20}
+                  SVGstrokeColor="#f1a545"
+                  SVGstorkeWidth="1px"
+                  emptyColor="transparent"
+                />
               </div>
               <div className="user__detail__card__item">
                 <p className="user__account__balance">
